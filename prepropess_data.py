@@ -3,18 +3,26 @@
 
 import os
 import os.path as osp
+from pathlib import Path
 
 import cv2
+import numpy as np
 from PIL import Image
 
 from transform import *
 
 
 def main(
-    face_data: str = os.environ["HOME"] + "/data/CelebAMask-HQ/CelebA-HQ-img",
-    face_sep_mask: str = os.environ["HOME"] + "/data/CelebAMask-HQ/CelebAMask-HQ-mask-anno",
-    mask_path: str = os.environ["HOME"] + "/data/CelebAMask-HQ/mask",
+    # fmt: off
+    face_data: str = os.environ["HOME"] + "/Data/FacialAttributes/CelebAMask-HQ/CelebA-HQ-img",
+    face_sep_mask: str = os.environ["HOME"] + "/Data/FacialAttributes/CelebAMask-HQ/CelebAMask-HQ-mask-anno",
+    mask_path: str = os.environ["HOME"] + "/Data/FacialAttributes/CelebAMask-HQ/mask",
+    # fmt: on
 ):
+    assert Path(face_data).exists()
+    assert Path(face_sep_mask).exists()
+    assert Path(mask_path).exists()
+
     counter = 0
     total = 0
     for i in range(15):
