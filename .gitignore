@@ -106,5 +106,6 @@ venv.bak/
 # res
 res/
 
+# IDE
 .idea/
-
+.vscode/
