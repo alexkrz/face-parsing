@@ -109,3 +109,6 @@ res/
 # IDE
 .idea/
 .vscode/
+
+# Custom
+/data/
